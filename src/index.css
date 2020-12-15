@@ -1,1 +1,26 @@
+@font-face {
+  font-family: "Permanent Marker";
+  src: local("Permanent Marker"),
+    url(./assets/fonts/PermanentMarker-Regular.ttf);
+}
 
+:root {
+  --react-blue: #61dbfb;
+}
+
+/* General
+************************************************************** */
+body,
+#contact {
+  background-color: black;
+  color: white;
+}
+h2 {
+  font-family: "Permanent Marker";
+  font-size: 4rem;
+}
+hr {
+  border: 0.1rem solid var(--react-blue);
+  background-color: var(--react-blue);
+  margin: 2rem auto 2rem auto;
+}

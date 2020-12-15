@@ -1,7 +1,9 @@
+import ContactForm from "./assets/containers/ContactForm";
+
 const App = () => {
   return (
     <main>
-      <h1>React Contact Form</h1>
+      <ContactForm />
     </main>
   );
 };
