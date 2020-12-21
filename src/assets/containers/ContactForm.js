@@ -1,18 +1,18 @@
 import React, { useState } from "react";
 // https://react-bootstrap.github.io/components/forms/
 import { Col, Form, Alert } from "react-bootstrap";
+import Processing from "../components/Processing"
 
-const Contact = () => {
+const Contact = ({apiUrl}) => {
   // Set initial states for the form
   const [validated, setValidated] = useState(false);
+  const [processing, setProcessing] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
   const [showError, setShowError] = useState(false);
 
   const postFormData = async (data) => {
     const response = await fetch(
-      // API Gateway Contact Form endpoint
-      "",
-      // Contact Form Lambda
+      `${apiUrl}`,
       {
         method: "POST",
         body: JSON.stringify(data),
@@ -40,7 +40,7 @@ const Contact = () => {
     }
 
     setValidated(true);
-
+    
     const name = event.target.elements.nameData.value;
     const email = event.target.elements.emailData.value;
     const message = event.target.elements.messageData.value;
@@ -53,8 +53,11 @@ const Contact = () => {
     if (form.checkValidity()) {
       event.preventDefault();
       event.persist();
+      setProcessing(true);
       postFormData(data)
         .then(() => {
+          // Reset processing (spinner)
+          setProcessing(false);
           // Reset validation
           setValidated(false);
           // Reset the form inputs
@@ -64,6 +67,7 @@ const Contact = () => {
         })
         .catch((error) => {
           console.log(error.message);
+          setProcessing(false);
           setValidated(false);
           event.target.reset();
           // Error alert
@@ -71,6 +75,14 @@ const Contact = () => {
         });
     }
   };
+
+  let button;
+
+  if (processing) {
+    button = <button type="submit" className="mt-3 btn btn-secondary btn-lg">Submit <Processing /></button>
+  } else {
+    button = <button type="submit" className="mt-3 btn btn-secondary btn-lg">Submit</button>
+  }
 
   return (
     <section
@@ -120,9 +132,7 @@ const Contact = () => {
 
           {/* Submit Button */}
           <Form.Row className="justify-content-center pb-5">
-            <button type="submit" className="mt-3 btn btn-secondary btn-lg">
-              Submit
-            </button>
+            {button}
           </Form.Row>
 
           {/* Success alert */}
