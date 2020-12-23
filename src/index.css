@@ -28,7 +28,7 @@ hr {
 /* Contact Form
 ************************************************************** */
 form {
-  margin-top: 2rem;
+  margin: 2rem 0 2rem 0;
   padding: 0 0.5rem 0 0.5rem;
   border: 0.1rem solid var(--react-blue);
   background-color: #292b2c;

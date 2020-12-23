@@ -94,7 +94,7 @@ const Contact = ({apiUrl}) => {
         <hr />
         <Form noValidate validated={validated} onSubmit={handleSubmit}>
           {/* Name */}
-          <Form.Row className="justify-content-center">
+          <Form.Row className="justify-content-center mt-3">
             <Form.Group as={Col} md="9" controlId="nameData">
               <Form.Label>Name</Form.Label>
               <Form.Control required type="text" placeholder="Name" />
