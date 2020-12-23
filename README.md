@@ -4,7 +4,7 @@
 
 A simple contact form built with [React Bootstrap](https://react-bootstrap.github.io/components/forms/) and powered by [AWS](https://aws.amazon.com/free/).
 
-### <a href="https://mshuber1981.github.io/github-react-portfolio-template/">LIVE DEMO</a>
+### <a href="https://mshuber1981.github.io/react-contact-form/">LIVE DEMO</a>
 
 ![Contact Form](/images/form.png)
 
