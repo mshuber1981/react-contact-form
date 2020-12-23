@@ -48,7 +48,7 @@ I chose to use GitHub pages for this project. A helpful guide for Create React A
 1. Update the homepage value in package.json (line 3)
 
    - ```javascript
-     "homepage": "https://myusername.github.io/my-app",
+     "homepage": "https://myusername.github.io/my-app/",
      ```
 
 1. Run the deployment command
