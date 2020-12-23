@@ -1,7 +1,7 @@
 import ContactForm from "./assets/containers/ContactForm";
 
 // API Gateway Contact Form endpoint
-const apiUrl = "Your API endpoint URL";
+const apiUrl = "Your API URL";
 
 const App = () => {
   return (
