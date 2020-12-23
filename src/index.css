@@ -24,3 +24,12 @@ hr {
   background-color: var(--react-blue);
   margin: 2rem auto 2rem auto;
 }
+
+/* Contact Form
+************************************************************** */
+form {
+  margin-top: 2rem;
+  padding: 0 0.5rem 0 0.5rem;
+  border: 0.1rem solid var(--react-blue);
+  background-color: #292b2c;
+}
