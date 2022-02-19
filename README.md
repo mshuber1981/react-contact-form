@@ -57,14 +57,6 @@ I chose to use GitHub pages for this project. A helpful guide for Create React A
      npm run deploy
      ```
 
-## Donate
-
-Was this helpful? Feeling generous? Please consider donating below.
-
-My [Coinbase](https://www.coinbase.com/) Bitcoin wallet address:
-
-![Bitcoin](/images/bitcoin.png)
-
 [Back to top ⬆](#react-contact-form)
 
 ## License
