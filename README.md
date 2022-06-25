@@ -1,27 +1,10 @@
-[![GitHub Repo stars](https://img.shields.io/github/stars/mshuber1981/react-contact-form?color=%2361dbfb&style=for-the-badge&logo=github)](https://github.com/mshuber1981/react-contact-form/stargazers/)
+# Contact Me
 
-# React Contact Form
-
-A simple contact form built with [React Bootstrap](https://react-bootstrap.github.io/components/forms/) and powered by [AWS](https://aws.amazon.com/free/).
+A simple contact form built with [React Bootstrap](https://react-bootstrap.github.io/components/forms/), and powered by [AWS](https://aws.amazon.com/free/). Try it out and send me a note.
 
 ### <a href="https://mshuber1981.github.io/react-contact-form/">LIVE DEMO</a>
 
-![Contact Form](/images/form.png)
-
-## Getting Started
-
-1. Clone/download
-1. Install the dependencies
-
-   - ```bash
-     npm i
-     ```
-
-1. Start the development server to view the results
-
-   - ```bash
-     npm start
-     ```
+![Contact Form](/README_images/form.png)
 
 ## Setting up the backend
 
@@ -32,33 +15,5 @@ A great article with all of the documentation you will need to get started can b
 I will outline the main steps below:
 
 1. Create your [Lambda](https://aws.amazon.com/lambda/) function, I have an example gist [here](https://gist.github.com/mshuber1981/591573070957a6102770ce99dec2f936)
-1. Create your [API Gateway](https://aws.amazon.com/api-gateway/), add your new API URL to src/App.js (line 4)
-
-   - ```javascript
-     // API Gateway Contact Form endpoint
-     const apiUrl = "Your API URL";
-     ```
-
+1. Create your [API Gateway endpoint](https://aws.amazon.com/api-gateway/), then connect your form to the endpoint URL.
 1. Setup Amazon [SES](https://aws.amazon.com/ses/)
-
-## Deploying the frontend
-
-I chose to use GitHub pages for this project. A helpful guide for Create React App deployments with GitHub Pages can be found [here](https://create-react-app.dev/docs/deployment#github-pages).
-
-1. Update the homepage value in package.json (line 3)
-
-   - ```javascript
-     "homepage": "https://myusername.github.io/my-app/",
-     ```
-
-1. Run the deployment command
-
-   - ```bash
-     npm run deploy
-     ```
-
-[Back to top ⬆](#react-contact-form)
-
-## License
-
-[MIT](https://choosealicense.com/licenses/mit/)
