@@ -5,6 +5,7 @@ A simple contact form built with [React Bootstrap](https://react-bootstrap.githu
 ### <a href="https://mshuber1981.github.io/react-contact-form/">LIVE DEMO</a>
 
 ![Contact Form](/README_images/form.png)
+![Contact Form](/README_images/aws.png)
 
 ## Setting up the backend
 
@@ -14,6 +15,6 @@ A great article with all of the documentation you will need to get started can b
 
 I will outline the main steps below:
 
-1. Create your [Lambda](https://aws.amazon.com/lambda/) function, I have an example gist [here](https://gist.github.com/mshuber1981/591573070957a6102770ce99dec2f936)
+1. Create your [Lambda](https://aws.amazon.com/lambda/) function, I have an example gist [here](https://gist.github.com/mshuber1981/591573070957a6102770ce99dec2f936).
 1. Create your [API Gateway endpoint](https://aws.amazon.com/api-gateway/), then connect your form to the endpoint URL.
-1. Setup Amazon [SES](https://aws.amazon.com/ses/)
+1. Setup Amazon [SES](https://aws.amazon.com/ses/).
