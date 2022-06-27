@@ -1,6 +1,6 @@
 # Contact Me
 
-A simple contact form built with [React Bootstrap](https://react-bootstrap.github.io/components/forms/), and powered by [AWS](https://aws.amazon.com/free/). Try it out and send me a note.
+A simple contact form built with [React Bootstrap](https://react-bootstrap.github.io/forms/overview/), and powered by [AWS](https://aws.amazon.com/free/). Try it out and send me a note.
 
 ### <a href="https://mshuber1981.github.io/react-contact-form/">LIVE DEMO</a>
 
