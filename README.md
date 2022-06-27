@@ -15,6 +15,7 @@ A great article with all of the documentation you will need to get started can b
 
 I will outline the main steps below:
 
-1. Create your [Lambda](https://aws.amazon.com/lambda/) function, I have an example gist [here](https://gist.github.com/mshuber1981/591573070957a6102770ce99dec2f936).
-1. Create your [API Gateway endpoint](https://aws.amazon.com/api-gateway/), then connect your form to the endpoint URL.
-1. Setup Amazon [SES](https://aws.amazon.com/ses/).
+1. Setup Amazon [SES](https://aws.amazon.com/ses/)
+1. Create your [Lambda](https://aws.amazon.com/lambda/) function (example [here](https://gist.github.com/mshuber1981/591573070957a6102770ce99dec2f936))
+1. Create your [API Gateway endpoint](https://aws.amazon.com/api-gateway/)
+1. Connect your form to the endpoint URL
