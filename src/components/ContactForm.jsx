@@ -45,7 +45,7 @@ export default function ContactForm({ apiUrl, theme }) {
         const response = await postData(data);
         if (!response.ok) {
           throw new Error(
-            `${response.status} ${response.statusText}, check formspreeUrl in data.js`
+            `${response.status} ${response.statusText}, check formspreeUrl`
           );
         }
         setIsProcessing(false);
