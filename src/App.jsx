@@ -7,22 +7,12 @@ import GlobalStyles from "./components/GlobalStyles";
 import Title from "./components/Title";
 import ContactForm from "./components/ContactForm";
 
-const apiUrl = process.env.REACT_APP_API_Gateway_URL;
-// const darkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
-// const themes = {
-//   light: {
-//     name: "light",
-//     color: "#45413C",
-//     background: "#F5F2E8",
-//   },
-//   dark: {
-//     name: "dark",
-//     color: "#FBFDFF",
-//     background: "#27272A",
-//   },
-// };
+// #region constants
+const apiUrl = import.meta.env.VITE_APP_API_Gateway_URL;
+// #endregion
 
-export default function App() {
+// #region component
+const App = () => {
   const [theme, setTheme] = React.useState("light");
 
   React.useEffect(() => {
@@ -58,4 +48,7 @@ export default function App() {
       </main>
     </ThemeProvider>
   );
-}
+};
+// #endregion
+
+export default App;
