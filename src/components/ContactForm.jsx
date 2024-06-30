@@ -1,16 +1,37 @@
 import React from "react";
+// Styles
+import styled from "styled-components";
+// State
+import PropTypes from "prop-types";
 // Components
 import { Alert, Button, Form, Spinner } from "react-bootstrap";
 
-export default function ContactForm({ apiUrl, theme }) {
+// #region styled-components
+const StyledForm = styled.div`
+  .form-control {
+    background: ${({ theme }) =>
+      theme.name === "light"
+        ? "rgba(var(--bs-body-color-rgb), 0.03)"
+        : "var(--bs-gray-dark)"};
+  }
+`;
+// #endregion
+
+// #region component
+const propTypes = {
+  apiUrl: PropTypes.string,
+  theme: PropTypes.string.isRequired,
+};
+
+const ContactForm = ({ apiUrl, theme }) => {
   const [isValidated, setIsValidated] = React.useState(false);
   const [isProcessing, setIsProcessing] = React.useState(false);
   const [success, setSuccess] = React.useState(false);
   const [danger, setDanger] = React.useState(false);
   const [dangerMessage, setDangerMessage] = React.useState(null);
 
-  async function postData(data) {
-    const response = await fetch(apiUrl, {
+  const postData = async (url, data) => {
+    const response = await fetch(url, {
       method: "POST",
       body: JSON.stringify(data),
       headers: {
@@ -19,9 +40,9 @@ export default function ContactForm({ apiUrl, theme }) {
       },
     });
     return response;
-  }
+  };
 
-  async function handleSubmit(event) {
+  const handleSubmit = async (event) => {
     const form = event.currentTarget;
     setSuccess(false);
     setDanger(false);
@@ -42,28 +63,30 @@ export default function ContactForm({ apiUrl, theme }) {
       event.persist();
       setIsProcessing(true);
       try {
-        const response = await postData(data);
+        const response = await postData(apiUrl, data);
+        // console.log(response);
         if (!response.ok) {
-          throw new Error(
-            `${response.status} ${response.statusText}, check formspreeUrl`
-          );
+          throw new Error(`${response.type}: ${response.statusText}`);
         }
         setIsProcessing(false);
         setIsValidated(false);
         event.target.reset();
         setSuccess(true);
       } catch (error) {
+        // console.log(error);
         setIsProcessing(false);
         setIsValidated(false);
         event.target.reset();
-        setDangerMessage(error.message);
+        setDangerMessage(
+          `${error.message}: check your REACT_APP_API_Gateway_URL variable in local .env file...`
+        );
         setDanger(true);
       }
     }
-  }
+  };
 
   return (
-    <>
+    <StyledForm>
       <Form noValidate validated={isValidated} onSubmit={handleSubmit}>
         <Form.Group className="mx-auto mb-3 form-group" controlId="name">
           <Form.Label>Name</Form.Label>
@@ -97,7 +120,7 @@ export default function ContactForm({ apiUrl, theme }) {
               variant={theme === "light" ? "outline-dark" : "outline-light"}
               type="submit"
               disabled={isProcessing}
-              className="my-3"
+              className="my-4"
             >
               Submit{" "}
               {isProcessing && (
@@ -105,7 +128,6 @@ export default function ContactForm({ apiUrl, theme }) {
               )}
             </Button>
           )}
-
           <Alert
             show={success}
             variant="success"
@@ -123,10 +145,17 @@ export default function ContactForm({ apiUrl, theme }) {
             <Alert.Heading>{dangerMessage}</Alert.Heading>
           </Alert>
           <Alert show={!apiUrl} variant="danger">
-            <Alert.Heading>You must provide an API Endpoint URL.</Alert.Heading>
+            <Alert.Heading>
+              You must provide a valid API endpoint URL.
+            </Alert.Heading>
           </Alert>
         </Form.Group>
       </Form>
-    </>
+    </StyledForm>
   );
-}
+};
+
+ContactForm.propTypes = propTypes;
+// #endregion
+
+export default ContactForm;
