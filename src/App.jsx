@@ -7,7 +7,7 @@ import GlobalStyles from "./components/GlobalStyles";
 import Title from "./components/Title";
 import ContactForm from "./components/ContactForm";
 
-// #region constants
+// #region constants - https://vite.dev/guide/env-and-mode#env-variables
 const apiUrl = import.meta.env.VITE_APP_API_Gateway_URL;
 // #endregion
 
