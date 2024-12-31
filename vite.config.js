@@ -10,7 +10,7 @@ export default defineConfig(({ mode }) => {
     define: {
       __APP_ENV__: JSON.stringify(env.APP_ENV),
     },
-    base: "react-contact-form",
+    base: "/react-contact-form",
     plugins: [react(), ghPages()],
   };
 });
