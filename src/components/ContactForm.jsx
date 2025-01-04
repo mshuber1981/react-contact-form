@@ -78,7 +78,7 @@ const ContactForm = ({ apiUrl, theme }) => {
         setIsValidated(false);
         event.target.reset();
         setDangerMessage(
-          `${error.message}: check your REACT_APP_API_Gateway_URL variable in local .env file...`
+          `${error.message}: check your VITE_APP_API_Gateway_URL variable in local .env file...`
         );
         setDanger(true);
       }
